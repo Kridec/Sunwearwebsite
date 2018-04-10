@@ -10,12 +10,17 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <form 
+        
         <?php
         $servername = 'localhost';
-        $conn = new mysqli($servername);
+        $username = 'root';
+        $password = '';
+        $dbname = 'login try number 2';
+        
+        $conn = new mysqli($servername, $username, $password);
+        
         if ($conn->connect_error) {
-            die("Connection Failed:" . $conn->connect_error);
+            die("Connection Failed: " . $conn->connect_error);
         }
         echo "Conected Successfully";
         $loginbrugernavn = $_POST["Brugernavn"];

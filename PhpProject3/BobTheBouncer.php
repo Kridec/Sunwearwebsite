@@ -23,8 +23,10 @@ and open the template in the editor.
             die("Connection Failed: " . $conn->connect_error);
         }
         echo "Conected Successfully";
-        $loginbrugernavn = $_POST["Brugernavn"];
-        $loginpassword = $_POST["Adgangskode"];
+        
+        mysqli_select_db($conn, $dbname) or die ("It failed.");
+                $sql = "Select ID, ForNavn, Efternavn from login";
+                $result = mysqli_query($conn, $sql);
         ?>
     </body>
 </html>

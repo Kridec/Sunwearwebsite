@@ -24,21 +24,21 @@ and open the template in the editor.
         <div id='First'>
             <form id="Bob" action="BobTheBouncer.php" method="post">
             
-            <label for="Brugernavn">Brugernavn:</label>
-                <br>
-            <input name="Brugernavn" type="brugernavn" id="Brugernavn">
+                <label for="Brugernavn">Brugernavn:</label>
+                    <br>
+                <input name="Brugernavn" type="brugernavn" id="Brugernavn">
             
-            <br>
+                    <br>
             
                 <label for="Adgangskode">Adgangskode:</label>
-                <br>
-            <input name="Adgangskode" type="Password" id="Adgangskode">
-            <br>
-            <input name="submit" type="submit" value="submit">
+                    <br>
+                <input name="Adgangskode" type="Password" id="Adgangskode">
+                    <br>
+                <input name="submit" type="submit" value="submit">
             </div>
         </form>
         <?php
-        // put your code here
+
         ?>
     </body>
 </html>

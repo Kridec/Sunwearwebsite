@@ -13,9 +13,9 @@ and open the template in the editor.
         
         <?php
         $servername = 'localhost';
-        $username = 'root';
-        $password = '';
-        $dbname = 'login try number 2';
+            $username = 'root';
+                $password = '';
+                    $dbname = 'login try number 2';
         
         $conn = new mysqli($servername, $username, $password);
         
@@ -25,8 +25,14 @@ and open the template in the editor.
         echo "Conected Successfully";
         
         mysqli_select_db($conn, $dbname) or die ("It failed.");
-                $sql = "Select ID, ForNavn, Efternavn from login";
+            $sql = "Select ID, Fornavn, Efternavn from login";
                 $result = mysqli_query($conn, $sql);
+        
+        $myusername = stripcslashes($myusername);
+            $mypassword = stripcslashes($mypassword);
+                $myusername = mysql_real_escape_string($myusername);
+                        $mypassword = mysql_real_esacpe_string($mypassword);
+         
         ?>
     </body>
 </html>

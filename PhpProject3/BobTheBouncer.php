@@ -26,14 +26,14 @@ and open the template in the editor.
         }
         echo "Conected Successfully <br>";
         
-        $username=$_POST['Brugernavn'];
-        $password=$_POST['Adgangskode'];
+        $my_username=$_POST['Brugernavn'];
+        $my_password=$_POST['Adgangskode'];
         
         mysqli_select_db($conn, $dbname) or die ("It failed.");
-            $sql = "SELECT * FROM $tbl_name Where Brugernavn='$username', Pasword='$password'";
-                $result = $conn->query($sql);
+            $sql = "SELECT * FROM $tbl_name Where Brugernavn='$my_username' AND Pasword='$my_password'";
+                $result = mysqli_query($conn,$sql);
                 
-        $count=mysqli_num_rows($result);
+        $count = mysqli_num_rows($result);
         
         if($count==1){
             echo 'We did it reddit';

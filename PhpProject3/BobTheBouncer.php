@@ -13,9 +13,11 @@ and open the template in the editor.
         
         <?php
         $servername = 'localhost';
-            $username = 'root';
-                $password = '';
+            $username = "root";
+                $password = "";
                     $dbname = 'login try number 2';
+                        $tbl_name="login";
+                    
         
         $conn = new mysqli($servername, $username, $password, $dbname);
         
@@ -24,17 +26,23 @@ and open the template in the editor.
         }
         echo "Conected Successfully <br>";
         
+        $username=$_POST['Brugernavn'];
+        $password=$_POST['Adgangskode'];
+        
         mysqli_select_db($conn, $dbname) or die ("It failed.");
-            $sql = "Select LoginID, Brugernavn, Pasword from login";
+            $sql = "SELECT * FROM $tbl_name Where Brugernavn='$username', Pasword='$password'";
                 $result = $conn->query($sql);
                 
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo "id: " . $row["LoginID"]. " - Brugernavn: ". $row["Brugernavn"]. " - Adgangskode: ". $row["Pasword"]. "<br>";
-            }
-        } else {
-            echo '0 resultater';
+        $count=mysqli_num_rows($result);
+        
+        if($count==1){
+            echo 'We did it reddit';
         }
+        else {
+            echo 'You suck dick';
+        }
+        
+        
         $conn->close();
                 
         ?>

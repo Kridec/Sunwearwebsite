@@ -24,7 +24,7 @@ and open the template in the editor.
         if ($conn->connect_error) {
             die("Connection Failed: " . $conn->connect_error);
         }
-        echo "Conected Successfully <br>";
+        
         
         $my_username=$_POST['Brugernavn'];
         $my_password=$_POST['Adgangskode'];
@@ -36,10 +36,11 @@ and open the template in the editor.
         $count = mysqli_num_rows($result);
         
         if($count==1){
-            echo 'We did it reddit';
+            $_SESSION['login'] = 1;
+            header("location:Door.php");
         }
         else {
-            echo 'You suck dick';
+            echo 'You had one job';
         }
         
         

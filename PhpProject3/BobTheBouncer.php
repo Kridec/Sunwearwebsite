@@ -37,10 +37,11 @@ and open the template in the editor.
         
         if($count==1){
             $_SESSION['login'] = 1;
-            header("location:Door.php");
+            header("location:cool kidz club.php");
         }
         else {
-            echo 'You had one job';
+            header("location:You're a failure.php");
+            
         }
         
         

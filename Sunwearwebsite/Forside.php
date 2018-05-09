@@ -11,6 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <p>HEJ ASGER</p>
+        IF THIS WORKS I AM THE BEST AROUND.
         <?php
         // put your code here
         ?>
